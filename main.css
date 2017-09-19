@@ -1,3 +1,16 @@
 .header1 {
    text-align: center;
 }
+
+.assignTbl {
+   font-size: 80%;
+   border-width: medium;
+   border-color: blue;
+}
+.tblHeader {
+   font-size: 80%;
+}
+
+.assignList {
+   font-size: 60%;
+}
