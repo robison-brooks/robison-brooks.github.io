@@ -9,6 +9,7 @@ body {
 }
 
 .assignTbl, th, td {
+   margin: 0 auto;
    width: auto;
    font-size: 100%;
    border-collapse: collapse;
