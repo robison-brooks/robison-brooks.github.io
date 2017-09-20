@@ -27,6 +27,7 @@ span {
 
 a:link {
     color: lightseagreen;
+    text-decoration: none;
 }
 
 a:visited {
