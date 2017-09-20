@@ -11,8 +11,21 @@
 
 td {
    width: 50%;
+
 }
 
 span {
    font-weight: bold;
+}
+
+a:link {
+    color: lightseagreen;
+}
+
+a:visited {
+    color: crimson;
+}
+
+a:hover {
+    color: darkseagreen;
 }
