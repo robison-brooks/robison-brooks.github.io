@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body {
+   font-family: 'PT Sans', sans-serif;
+}
+
 .header1 {
    text-align: center;
 }
