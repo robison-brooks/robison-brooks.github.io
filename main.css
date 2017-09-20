@@ -31,7 +31,8 @@ a:link {
 }
 
 a:visited {
-    color: crimson;
+    color: lightseagreen;
+    text-decoration: none;
 }
 
 a:hover {
