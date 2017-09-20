@@ -16,11 +16,6 @@ body {
    border: 2px solid grey;
 }
 
-td {
-   width: auto;
-
-}
-
 span {
    font-weight: bold;
 }
