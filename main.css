@@ -3,6 +3,7 @@
 }
 
 .assignTbl, th, td {
+   width: 75%;
    font-size: 100%;
    border-collapse: collapse;
    border: 3px solid blue;
