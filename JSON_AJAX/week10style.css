@@ -1,0 +1,50 @@
+body {
+	background-color: #006D4C;
+	color: white;
+	font-family: helvetica, sans-serif;
+	/*background-image: url('http://eskipaper.com/images/textured-backgrounds-5.jpg');*/
+	padding-bottom: 40px;
+}
+
+#part1 {
+	margin: 0 auto;
+	height: auto;
+	width: 800px;
+	background-color: #003726;
+	padding: 20px;
+
+}
+
+#countries {
+	width: 150px;
+	text-align: center;
+}
+
+#cities, #students {
+	border-collapse: collapse;
+	margin: 0 auto 0 auto;
+
+}
+
+th, tr, td {
+	border: 2pt solid white;
+	border-collapse: collapse;
+	padding: 10px;
+	text-align: center;
+}
+
+#part2 {
+	margin: 0 auto;
+	height: auto;
+	width: 800px;
+	background-color: #003726;
+	padding: 20px;
+}
+
+#filename {
+	padding: 50px;
+}
+
+h1 {
+	text-align: center;
+}

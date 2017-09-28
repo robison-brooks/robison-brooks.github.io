@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head charset="utf-8">
+      <title>Brooks Robison | Week10</title>
+      <script type="text/javascript" src="week10.js"></script>
+      <link rel="stylesheet" type="text/css" href="week10style.css"></link>
+   </head>
+   <body>
+      <!-- Part One -->
+      <h1>Part 1 | Countries</h1>
+      <div id="part1">
+         <select id="countries" onchange="onCityClick()">
+            <option disabled selected value>Select a Country</option>
+            <option value="usa.txt">USA</option>
+            <option value="mexico.txt">Mexico</option>
+            <option value="canada.txt">Canada</option>
+            <option value="russia.txt">Russia</option>
+         </select>
+         <br><br>
+         <h1>Top 4 Cities by Population</h1>
+         <table id="cities">
+            <tr>
+               <th>City</th>
+               <th>Population</th>
+            </tr>
+         </table>
+      </div>
+
+      <br><br><br>
+      <hr>
+
+      <!-- Part Two -->
+      <h1>Part 2 | Students</h1>
+      <div id="part2">
+         <p>Please enter complete filename (e.g. json1.txt):</p>
+         <input id="fileName" type="text" value="json.txt"></input>
+         <button onclick="onLoadClick()">Load</button>
+         <br><br>
+         <table id="students">
+            <tr>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Address</th>
+               <th>Major</th>
+               <th>G.P.A.</th>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
