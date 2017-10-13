@@ -81,22 +81,34 @@ function display_poster() {
    if (document.getElementById("overview").style.display == "initial") {
       document.getElementById("overview").style.display = "none";
    }
-   var video = document.getElementById("vids");
-   var vWrap = document.getElementById("vidWrapper");
-   video.pause();
-   while (vWrap.firstChild) {
-      vWrap.removeChild(vWrap.firstChild);
+   if (document.getElementById("vids")) {
+      var video = document.getElementById("vids");
+      var vWrap = document.getElementById("vidWrapper");
+      video.pause();
+      while (vWrap.firstChild) {
+         vWrap.removeChild(vWrap.firstChild);
+      }
    }
+
    document.getElementById("dispPoster").style.display = "initial";
 }
 
 function display_overview() {
    document.getElementById("overview").style.display = "initial";
-   var video = document.getElementById("vids");
-   var vWrap = document.getElementById("vidWrapper");
-   video.pause();
-   while (vWrap.firstChild) {
-      vWrap.removeChild(vWrap.firstChild);
+
+   if (document.getElementById("vidWrapper").style.display == "initial") {
+      document.getElementById("vidWrapper").style.display = "none";
+   }
+   if (document.getElementById("dispPoster").style.display == "initial") {
+      document.getElementById("dispPoster").style.display = "none";
+   }
+   if (document.getElementById("vids")) {
+      var video = document.getElementById("vids");
+      var vWrap = document.getElementById("vidWrapper");
+      video.pause();
+      while (vWrap.firstChild) {
+         vWrap.removeChild(vWrap.firstChild);
+      }
    }
 
    var input = document.getElementById("input").value;
