@@ -18,12 +18,14 @@
   </head>
   <body onload="onload()">
      <div id="container">
-        <button onclick="submitBtn()">Submit</button>
+        <button id="new" onClick="window.location.reload()">New Search</button>
+        <button id="reloadBtn" onclick="submitBtn()">Submit</button>
      </div>
      <div id="infoCont" style="inline">
-        <button onclick="display_overview()">Overview</button>
-        <button onclick="display_cast()">Cast</button>
-        <button onclick="video_check()">Video</button>
+        <button class="btns" onclick="display_poster()">Poster</button>
+        <button class="btns" onclick="display_overview()">Overview</button>
+        <button class="btns" onclick="display_cast()">Cast</button>
+        <button class="btns" onclick="video_check()">Video</button>
      </div>
   </body>
 </html>
