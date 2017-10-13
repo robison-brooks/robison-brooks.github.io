@@ -16,14 +16,14 @@ function onload() {
    vidWrapper.setAttribute("id", "vidWrapper");
    vidWrapper.style.display = "none";
 
-   var video = document.createElement("video");
-   video.classList.add("vid");
-   video.setAttribute("id", "vids");
-   video.setAttribute("width", "640");
-   video.setAttribute("height", "360");
-   video.setAttribute("type", "video/youtube");
-   video.setAttribute("autoplay", "autoplay");
-   vidWrapper.appendChild(video);
+   // var video = document.createElement("video");
+   // video.classList.add("vid");
+   // video.setAttribute("id", "vids");
+   // video.setAttribute("width", "640");
+   // video.setAttribute("height", "360");
+   // video.setAttribute("type", "video/youtube");
+   // video.setAttribute("autoplay", "autoplay");
+   // vidWrapper.appendChild(video);
 
    var overview = document.createElement("p");
    overview.classList.add("overview");
@@ -81,11 +81,24 @@ function display_poster() {
    if (document.getElementById("overview").style.display == "initial") {
       document.getElementById("overview").style.display = "none";
    }
+   var video = document.getElementById("vids");
+   var vWrap = document.getElementById("vidWrapper");
+   video.pause();
+   while (vWrap.firstChild) {
+      vWrap.removeChild(vWrap.firstChild);
+   }
    document.getElementById("dispPoster").style.display = "initial";
 }
 
 function display_overview() {
    document.getElementById("overview").style.display = "initial";
+   var video = document.getElementById("vids");
+   var vWrap = document.getElementById("vidWrapper");
+   video.pause();
+   while (vWrap.firstChild) {
+      vWrap.removeChild(vWrap.firstChild);
+   }
+
    var input = document.getElementById("input").value;
 
    if (document.getElementById("dispPoster").style.display == "initial") {
@@ -136,15 +149,15 @@ function video_check() {
          var vidWrapper = document.getElementById("vidWrapper");
          vidWrapper.style.display = "initial";
 
-         // var video = document.createElement("video");
+         var video = document.createElement("video");
 
-         // video.classList.add("vid");
-         // video.setAttribute("id", "vids");
-         // video.setAttribute("width", "640");
-         // video.setAttribute("height", "360");
-         // video.setAttribute("type", "video/youtube");
-         // video.setAttribute("autoplay", "autoplay");
-         var video = document.getElementById("vids");
+         video.classList.add("vid");
+         video.setAttribute("id", "vids");
+         video.setAttribute("width", "640");
+         video.setAttribute("height", "360");
+         video.setAttribute("type", "video/youtube");
+         video.setAttribute("autoplay", "autoplay");
+
          var vSource = document.createElement("Source");
          vSource.setAttribute("id", "vSrc");
          vSource.setAttribute("src", "https://www.youtube.com/watch?v=" + key)
@@ -163,4 +176,6 @@ function video_check() {
    };
    xhttp.open("GET", "https://api.themoviedb.org/3/movie/" + movieID + "/videos?api_key=45b19b4b50f27078c87fd53b39383140", true);
    xhttp.send();
+
+   //document.getElementById("videoBtn").style.display = "none";
 }
