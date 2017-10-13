@@ -136,6 +136,14 @@ function video_check() {
          var vidWrapper = document.getElementById("vidWrapper");
          vidWrapper.style.display = "initial";
 
+         // var video = document.createElement("video");
+
+         // video.classList.add("vid");
+         // video.setAttribute("id", "vids");
+         // video.setAttribute("width", "640");
+         // video.setAttribute("height", "360");
+         // video.setAttribute("type", "video/youtube");
+         // video.setAttribute("autoplay", "autoplay");
          var video = document.getElementById("vids");
          var vSource = document.createElement("Source");
          vSource.setAttribute("id", "vSrc");
