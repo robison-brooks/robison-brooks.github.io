@@ -161,6 +161,6 @@ function video_check() {
          });
       }
    };
-   xhttp.open("GET", "http://api.themoviedb.org/3/movie/" + movieID + "/videos?api_key=45b19b4b50f27078c87fd53b39383140", true);
+   xhttp.open("GET", "https://api.themoviedb.org/3/movie/" + movieID + "/videos?api_key=45b19b4b50f27078c87fd53b39383140", true);
    xhttp.send();
 }
