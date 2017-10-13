@@ -12,10 +12,18 @@
     <!-- External Style and JavaScript-->
     <link rel="stylesheet" type="text/css" href="main.css">
     <script type="text/javascript" src="main.js"></script>
+    <script src="mediaelement-and-player.min.js"></script>
+    <link rel="stylesheet" href="mediaelementplayer.css" />
 
   </head>
   <body onload="onload()">
      <div id="container">
+        <button onclick="submitBtn()">Submit</button>
+     </div>
+     <div id="infoCont" style="inline">
+        <button onclick="display_overview()">Overview</button>
+        <button onclick="display_cast()">Cast</button>
+        <button onclick="video_check()">Video</button>
      </div>
   </body>
 </html>

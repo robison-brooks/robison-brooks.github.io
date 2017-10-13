@@ -1,0 +1,13 @@
+
+.search {
+
+   #container:hover & {
+       transform: scale(2);
+     }
+
+}
+
+.poster {
+  transition: all 300ms;
+
+}
