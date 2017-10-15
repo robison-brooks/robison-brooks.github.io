@@ -12,6 +12,7 @@
    margin: 0 auto;
    text-align: center;
    color: white;
+   background-color: black;
 }
 .cTable, th, td {
    /*margin: 0 auto;*/
