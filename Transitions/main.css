@@ -3,6 +3,8 @@
    margin: 0 auto;
    text-align: center;
    font-size: 150%;
+   background-color: black;
+   color: white;
 }
 
 #movieTitle {
