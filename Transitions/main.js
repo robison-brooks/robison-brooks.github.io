@@ -1,13 +1,7 @@
 function onload() {
-   // document.getElementById("search").style.display = "initial";
    document.getElementById("new").style.display = "none";
    document.getElementById("btn-group").style.display = "none";
-   // var search = document.createElement("div");
 
-   // var sBar = document.createElement("input");
-   // sBar.classList.add('sBar');
-   // sBar.setAttribute("id", "input");
-   // search.appendChild(sBar);
 
    var res = document.getElementById("results");
    res.classList.add('results');
@@ -49,25 +43,33 @@ function onload() {
 
 function submitBtn() {
    var input = document.getElementById("input").value;
-   document.getElementById("movieTitle").innerHTML = input.charAt(0).toUpperCase() + input.slice(1);
+
 
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
          var obj = JSON.parse(this.responseText);
-         var posterPath = obj.results[0].poster_path;
-         var movieID = obj.results[0].id;
-         var backdrop = "http://image.tmdb.org/t/p/w1280" + obj.results[0].backdrop_path;
 
-         document.getElementById("mInfo").setAttribute("mID", movieID);
+         if (obj.total_results == "0") {
+            document.getElementById("movieTitle").innerHTML = "We couldn't find that movie. Try again!";
+            document.getElementById("btn-group").style.display = "none";
+         }
+         else {
+            document.getElementById("movieTitle").innerHTML = input.charAt(0).toUpperCase() + input.slice(1);
+            var posterPath = obj.results[0].poster_path;
+            var movieID = obj.results[0].id;
+            var backdrop = "http://image.tmdb.org/t/p/w1280" + obj.results[0].backdrop_path;
 
-         var poster = document.getElementById("dispPoster");
-         poster.setAttribute("src", "http://image.tmdb.org/t/p/w342/" + posterPath);
-         poster.style.display = "block";
-         poster.style.margin = "auto";
-         document.getElementById("results").appendChild(poster);
+            document.getElementById("mInfo").setAttribute("mID", movieID);
 
-         document.body.style.backgroundImage = "url(" + backdrop + ")";
+            var poster = document.getElementById("dispPoster");
+            poster.setAttribute("src", "http://image.tmdb.org/t/p/w342/" + posterPath);
+            poster.style.display = "block";
+            poster.style.margin = "auto";
+            document.getElementById("results").appendChild(poster);
+
+            document.body.style.backgroundImage = "url(" + backdrop + ")";
+         }
       }
    };
    xhttp.open("GET", "https://api.themoviedb.org/3/search/movie?include_adult=false&page=1&query=" + input + "&language=en-US&api_key=45b19b4b50f27078c87fd53b39383140", true);
