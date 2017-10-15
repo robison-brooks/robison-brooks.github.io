@@ -17,15 +17,25 @@
 
   </head>
   <body onload="onload()">
-     <div id="container">
-        <button id="new" onClick="window.location.reload()">New Search</button>
-        <button id="reloadBtn" onclick="submitBtn()">Submit</button>
+     <div class="title">
+        <h1>Movie Deets</h1>
      </div>
-     <div id="infoCont" style="inline">
+     <div id="container">
+        <input class="sBar" id="input" placeholder="Enter your movie here..."/>
+        <br><br>
+        <button id="search" onclick="submitBtn()">Submit</button>
+        <button id="new" onClick="window.location.reload()">New Search</button>
+     </div>
+     <div id="btn-group">
         <button class="btns" onclick="display_poster()">Poster</button>
         <button class="btns" onclick="display_overview()">Overview</button>
         <button class="btns" onclick="display_cast()">Cast</button>
         <button class="btns" id="videoBtn" onclick="video_check()">Video</button>
+     </div>
+     <br><br><br>
+     <h1 id="movieTitle"></h1>
+     <br><br>
+     <div id="results">
      </div>
   </body>
 </html>
