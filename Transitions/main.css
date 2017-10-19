@@ -1,6 +1,6 @@
 @media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 667px) {
+  and (min-device-width: 360px)
+  and (max-device-width: 640px) {
 
    body {
       background-repeat: repeat;
@@ -41,6 +41,18 @@
       margin: auto;
    }
 
+   .search {
+      background-color: black;
+      border: 1px solid darkgray;
+      color: #45CEE0;
+      padding: 10px 24px;
+      cursor: pointer;
+      position: relative;
+      margin: 0 auto;
+      font-size: 100%;
+      transition: all 4s ease;
+   }
+
    .new {
       background-color: black;
       border: 1px solid darkgray;
@@ -52,6 +64,14 @@
       font-size: 100%;
       opacity: 0.3;
       transition: all 4s ease;
+   }
+
+   .fade-in {
+      opacity: 1.0
+   }
+
+   .fade-out {
+      opacity: 0.3;
    }
 
    .btn-group {
@@ -70,26 +90,7 @@
       padding: 10px 24px;
       cursor: pointer;
       float: left;
-   }
-
-   .search {
-      background-color: black;
-      border: 1px solid darkgray;
-      color: #45CEE0;
-      padding: 10px 24px;
-      cursor: pointer;
-      position: relative;
-      margin: 0 auto;
-      font-size: 100%;
-      transition: all 4s ease;
-   }
-
-   .fade-in {
-      opacity: 1.0
-   }
-
-   .fade-out {
-      opacity: 0.3;
+      transition:
    }
 
    #movieTitle {
