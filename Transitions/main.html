@@ -11,26 +11,29 @@
 
     <!-- External Style and JavaScript-->
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="mainLaptop.css">
     <script type="text/javascript" src="main.js"></script>
     <script src="mediaelement-and-player.min.js"></script>
     <link rel="stylesheet" href="mediaelementplayer.css" />
 
   </head>
   <body onload="onload()">
-     <div class="title">
+     <div id="title" class="title">
         <h1>Movie Deets</h1>
      </div>
+     <br><br><br><br><br>
      <div id="container">
         <input class="sBar" id="input" placeholder="Enter your movie here..."/>
         <br><br>
-        <button id="search" onclick="submitBtn()">Submit</button>
-        <button id="new" onClick="window.location.reload()">New Search</button>
+        <button id="search" class="search" onclick="submitBtn()">Submit</button>
+        <button id="new" class="new" onClick="window.location.reload()">New Search</button>
      </div>
-     <div id="btn-group">
-        <button class="btns" onclick="display_poster()">Poster</button>
-        <button class="btns" onclick="display_overview()">Overview</button>
-        <button class="btns" onclick="display_cast()">Cast</button>
-        <button class="btns" id="videoBtn" onclick="video_check()">Video</button>
+     <br>
+     <div id="btn-group" class="btn-group">
+        <button class="btns1" onclick="display_poster()">Poster</button>
+        <button class="btns2" onclick="display_overview()">Overview</button>
+        <button class="btns3" onclick="display_cast()">Cast</button>
+        <button class="btns4" id="videoBtn" onclick="video_check()">Video</button>
      </div>
      <br><br><br>
      <h1 id="movieTitle"></h1>

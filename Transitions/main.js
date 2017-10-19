@@ -1,7 +1,8 @@
 function onload() {
-   document.getElementById("new").style.display = "none";
+   // document.getElementById("new").style.display = "none";
+   document.getElementById("new").disabled = true;
+   document.getElementById("search").disabled = false;
    document.getElementById("btn-group").style.display = "none";
-
 
    var res = document.getElementById("results");
    res.classList.add('results');
@@ -38,12 +39,20 @@ function onload() {
    // document.getElementById("results").appendChild(res);
    document.getElementById("btn-group").appendChild(mInfo);
 
-
 }
 
 function submitBtn() {
    var input = document.getElementById("input").value;
+   document.getElementById("title").classList.add("title1");
 
+
+   document.getElementById("input").style.display = "none";
+   document.getElementById("new").classList.add("fade-in");
+   document.getElementById("new").disabled = false;
+   document.getElementById("search").classList.add("fade-out");
+   document.getElementById("search").disabled = true;
+
+   document.getElementById("btn-group").style.display = "";
 
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
@@ -75,10 +84,7 @@ function submitBtn() {
    xhttp.open("GET", "https://api.themoviedb.org/3/search/movie?include_adult=false&page=1&query=" + input + "&language=en-US&api_key=45b19b4b50f27078c87fd53b39383140", true);
    xhttp.send();
 
-   document.getElementById("search").style.display = "none";
-   document.getElementById("input").style.display = "none";
-   document.getElementById("new").style.display = "initial";
-   document.getElementById("btn-group").style.display = "";
+
 }
 
 function display_poster() {
