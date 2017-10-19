@@ -11,7 +11,7 @@
       background-repeat: repeat;
       background-attachment: fixed;
       background-image: url("gradient-mask2.png");
-
+      overflow-x: hidden;
    }
 
    .title {
@@ -38,7 +38,7 @@
    .title1 h1{
       color: #45CEE0;
       font-size: 100%;
-      transform:translate(-122px, -16px);
+      transform:translate(-140px, -14px);
    }
 
    .scrolling {
@@ -139,7 +139,7 @@
       top: 0px;
       right: 0px;
       left: 12px;
-      width: 90%;
+      width: 100%;
       text-align: center;
    }
 
