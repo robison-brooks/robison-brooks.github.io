@@ -2,9 +2,16 @@
   and (min-device-width: 320px)
   and (max-device-width: 667px) {
 
+   @font-face {
+      font-family: 'Corleone';
+      src: url('Corleone.ttf');
+   }
+
    body {
       background-repeat: repeat;
       background-attachment: fixed;
+      background-image: url("gradient-mask2.png");
+
    }
 
    .title {
@@ -17,16 +24,74 @@
       font-size: 150%;
       background-color: black;
       color: white;
+
+   }
+
+   .title .fontStyle {
+      font-family: Corleone;
    }
 
    .title h1 {
-      transition: color 4s ease, font-size 4s ease, transform 4s ;
+      transition: color 4s ease, font-size 4s ease, transform 4s;
    }
 
    .title1 h1{
       color: #45CEE0;
       font-size: 100%;
       transform:translate(-122px, -16px);
+   }
+
+   .scrolling {
+      width: 0 auto;
+      margin: 0 auto;
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      font-family: sans-serif;
+   }
+
+   .scrolling span {
+      display: inline-block;
+      padding-right: 100%;
+      animation: scrollText 5s linear infinite;
+   }
+
+   @keyframes scrollText {
+      0%   {
+         transform: translate(-40%, 0);
+         color: white;
+      }
+      10% {
+         color: #45CEE0;
+      }
+      20% {
+         color: white;
+      }
+      30% {
+         color: #45CEE0;
+      }
+      40% {
+         color: white;
+      }
+      50% {
+         color: #45CEE0;
+      }
+      60% {
+         color: white;
+      }
+      70% {
+         color: #45CEE0;
+      }
+      80% {
+         color: white;
+      }
+      90% {
+         color: #45CEE0;
+      }
+      100% {
+         transform: translate(100%, 0);
+         color: white;
+      }
    }
 
    #container {
@@ -85,7 +150,6 @@
       padding: 10px 24px;
       cursor: pointer;
       float: left;
-      transition:
    }
 
    #movieTitle {
@@ -105,8 +169,6 @@
    }
 
    .cTable, th, td {
-      /*margin: 0 auto;*/
-      /*width: auto;*/
       font-size: 100%;
       border-collapse: collapse;
       border: 2px solid black;

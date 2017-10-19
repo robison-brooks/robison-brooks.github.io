@@ -43,16 +43,15 @@ function onload() {
 
 function submitBtn() {
    var input = document.getElementById("input").value;
+
    document.getElementById("title").classList.add("title1");
-
-
    document.getElementById("input").style.display = "none";
    document.getElementById("new").classList.add("fade-in");
    document.getElementById("new").disabled = false;
    document.getElementById("search").classList.add("fade-out");
    document.getElementById("search").disabled = true;
-
    document.getElementById("btn-group").style.display = "";
+   document.getElementById("scrolling").innerHTML = "Check Out Deez Deets!"
 
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
@@ -67,7 +66,7 @@ function submitBtn() {
             document.getElementById("movieTitle").innerHTML = input.charAt(0).toUpperCase() + input.slice(1);
             var posterPath = obj.results[0].poster_path;
             var movieID = obj.results[0].id;
-            var backdrop = "http://image.tmdb.org/t/p/w1280" + obj.results[0].backdrop_path;
+            var backdrop = "http://image.tmdb.org/t/p/w780" + obj.results[0].backdrop_path;
 
             document.getElementById("mInfo").setAttribute("mID", movieID);
 
@@ -254,8 +253,8 @@ function video_check() {
 
          video.classList.add("vid");
          video.setAttribute("id", "vids");
-         video.setAttribute("width", "640");
-         video.setAttribute("height", "360");
+         video.setAttribute("width", "350");
+         video.setAttribute("height", "270");
          video.setAttribute("type", "video/youtube");
          video.setAttribute("autoplay", "autoplay");
 
