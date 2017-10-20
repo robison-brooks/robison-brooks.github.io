@@ -66,7 +66,7 @@ function submitBtn() {
             document.getElementById("movieTitle").innerHTML = input.charAt(0).toUpperCase() + input.slice(1);
             var posterPath = obj.results[0].poster_path;
             var movieID = obj.results[0].id;
-            var backdrop = "http://image.tmdb.org/t/p/w780" + obj.results[0].backdrop_path;
+            var backdrop = "https://image.tmdb.org/t/p/w780" + obj.results[0].backdrop_path;
 
             document.getElementById("mInfo").setAttribute("mID", movieID);
 
