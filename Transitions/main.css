@@ -38,7 +38,7 @@
    .title1 h1{
       color: #45CEE0;
       font-size: 100%;
-      transform:translate(-140px, -14px);
+      transform: translate(-140px, -14px);
    }
 
    .scrolling {
@@ -46,7 +46,6 @@
       margin: 0 auto;
       white-space: nowrap;
       overflow: hidden;
-      box-sizing: border-box;
       font-family: sans-serif;
    }
 
@@ -176,7 +175,18 @@
       text-align: center;
       background-color: black;
       position: relative;
+      animation: scrollTD 5s ease;
    }
+
+   @keyframes scrollTD {
+      0% {
+         transform: translate(-300%, 0);
+      }
+      100% {
+         transform: translate(0, 0);
+      }
+   }
+
 
    .sBar {
       width: 50%;
