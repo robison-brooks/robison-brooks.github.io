@@ -71,7 +71,7 @@ function submitBtn() {
             document.getElementById("mInfo").setAttribute("mID", movieID);
 
             var poster = document.getElementById("dispPoster");
-            poster.setAttribute("src", "http://image.tmdb.org/t/p/w342/" + posterPath);
+            poster.setAttribute("src", "https://image.tmdb.org/t/p/w342/" + posterPath);
             poster.style.display = "block";
             poster.style.margin = "auto";
             document.getElementById("results").appendChild(poster);
@@ -201,7 +201,7 @@ function display_cast() {
             var roleData = document.createElement("td");
 
             if(obj.cast[i].profile_path != null) {
-               var picturePath = "http://image.tmdb.org/t/p/w45" + obj.cast[i].profile_path;
+               var picturePath = "https://image.tmdb.org/t/p/w45" + obj.cast[i].profile_path;
                picImg.setAttribute("src", picturePath);
                picData.appendChild(picImg);
                tRow.appendChild(picData);
