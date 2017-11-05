@@ -285,7 +285,7 @@ function video_check() {
 
 function storeData(input) {
    var movies = [];
-   if (!localStorage.getItem('movies')) {
+   if (!localStorage.getItem('movies')) { 
       movies.push(input);
       localStorage.setItem('movies', JSON.stringify(movies));
    }
