@@ -1,5 +1,10 @@
 function onload() {
+   window.onbeforeunload = function() {
+   localStorage.removeItem(key);
+   return '';
+   };
    // document.getElementById("new").style.display = "none";
+   // localStorage.clear(); //remove this when done.
    document.getElementById("new").disabled = true;
    document.getElementById("search").disabled = false;
    document.getElementById("btn-group").style.display = "none";
@@ -83,7 +88,7 @@ function submitBtn() {
    xhttp.open("GET", "https://api.themoviedb.org/3/search/movie?include_adult=false&page=1&query=" + input + "&language=en-US&api_key=45b19b4b50f27078c87fd53b39383140", true);
    xhttp.send();
 
-
+   storeData(input);
 }
 
 function display_poster() {
@@ -276,4 +281,19 @@ function video_check() {
    };
    xhttp.open("GET", "https://api.themoviedb.org/3/movie/" + movieID + "/videos?api_key=45b19b4b50f27078c87fd53b39383140", true);
    xhttp.send();
+}
+
+function storeData(input) {
+   var movies = [];
+   if (!localStorage.getItem('movies')) {
+      movies.push(input);
+      localStorage.setItem('movies', JSON.stringify(movies));
+   }
+   else {
+      var savedMovies = localStorage.getItem('movies');
+      var moreMovies = JSON.parse(savedMovies);
+      moreMovies.push(input);
+
+      localStorage.setItem('movies', JSON.stringify(moreMovies));
+   }
 }

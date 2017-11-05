@@ -12,6 +12,8 @@
     <!-- External Style and JavaScript-->
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="mainLaptop.css">
+
+    <script type="text/javascript" src="detect.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <script src="mediaelement-and-player.min.js"></script>
     <link rel="stylesheet" href="mediaelementplayer.css" />
@@ -27,9 +29,11 @@
      <div id="container">
         <input class="sBar" id="input" placeholder="Enter your movie here..."/>
         <br><br>
-        <button id="search" class="search" onclick="submitBtn()">Submit</button>
+        <button id="search" class="search" ontouch="submitBtn()" onclick="submitBtn()">Submit</button>
         <button id="new" class="new" onClick="window.location.reload()">New Search</button>
      </div>
+     <br>
+     <h1 id="movieTitle"></h1>
      <br>
      <div id="btn-group" class="btn-group">
         <button class="btns1" onclick="display_poster()">Poster</button>
@@ -38,8 +42,6 @@
         <button class="btns4" id="videoBtn" onclick="video_check()">Video</button>
      </div>
      <br><br><br>
-     <h1 id="movieTitle"></h1>
-     <br><br>
      <div id="results">
      </div>
   </body>
