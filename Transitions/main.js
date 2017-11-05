@@ -297,4 +297,3 @@ function storeData(input) {
       localStorage.setItem('movies', JSON.stringify(moreMovies));
    }
 }
-  
