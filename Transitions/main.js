@@ -1,8 +1,5 @@
 function onload() {
-   window.onbeforeunload = function() {
-   localStorage.removeItem(key);
-   return '';
-   };
+
    // document.getElementById("new").style.display = "none";
    // localStorage.clear(); //remove this when done.
    document.getElementById("new").disabled = true;
@@ -46,8 +43,14 @@ function onload() {
 
 }
 
-function submitBtn() {
-   var input = document.getElementById("input").value;
+function submitBtn(newText) {
+   var input = "";
+
+   if (newText.length > 0) {
+      input = newText;
+   } else {
+      input = document.getElementById("input").value;
+   }
 
    document.getElementById("title").classList.add("title1");
    document.getElementById("input").style.display = "none";
@@ -99,6 +102,10 @@ function display_poster() {
       document.getElementById("overview").style.display = "none";
    }
    if (document.getElementById("cTable")) {
+
+      while (document.getElementById("cTable").hasChildNodes()) {
+         document.getElementById("cTable").removeChild(document.getElementById("cTable").firstChild);
+      }
       document.getElementById("cTable").style.display = "none";
    }
    if (document.getElementById("vids")) {
@@ -123,6 +130,9 @@ function display_overview() {
       document.getElementById("dispPoster").style.display = "none";
    }
    if (document.getElementById("cTable")) {
+      while (document.getElementById("cTable").hasChildNodes()) {
+         document.getElementById("cTable").removeChild(document.getElementById("cTable").firstChild);
+      }
       document.getElementById("cTable").style.display = "none";
    }
    if (document.getElementById("vids")) {
@@ -134,7 +144,7 @@ function display_overview() {
       }
    }
 
-   var input = document.getElementById("input").value;
+   var input = document.getElementById("movieTitle").innerHTML;
 
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
@@ -242,6 +252,9 @@ function video_check() {
       document.getElementById("overview").style.display = "none";
    }
    if (document.getElementById("cTable")) {
+      while (document.getElementById("cTable").hasChildNodes()) {
+         document.getElementById("cTable").removeChild(document.getElementById("cTable").firstChild);
+      }
       document.getElementById("cTable").style.display = "none";
    }
 
@@ -296,4 +309,49 @@ function storeData(input) {
 
       localStorage.setItem('movies', JSON.stringify(moreMovies));
    }
+}
+
+function display_history() {
+   document.getElementById("history").style.display = "block";
+
+   if (localStorage.getItem('movies')) {
+
+      var movieString = localStorage.getItem('movies');
+      var movieObj = JSON.parse(movieString);
+      var historyDiv = document.getElementById('history')
+      var historyList = document.createElement("div");
+      historyList.setAttribute("id", "historyList");
+
+      for (var i = 0; i < movieObj.length; i++) {
+         var movieNameLink = document.createElement("a");
+         movieNameLink.setAttribute("href", "javascript:submitBtn(" + '\'' + movieObj[i] + '\'' + ")");
+         movieNameLink.setAttribute("id", "movieLinkID");
+         var movieName = document.createElement("p");
+         movieName.classList.add("movieList");
+         movieName.innerHTML = movieObj[i].charAt(0).toUpperCase() + movieObj[i].slice(1);;
+
+         movieNameLink.appendChild(movieName);
+         historyList.appendChild(movieNameLink);
+         historyDiv.appendChild(historyList);
+      }
+   } else {
+      document.getElementById("history").style.display = "none";
+
+      while (document.getElementById("historyList").hasChildNodes()) {
+         document.getElementById("historyList").removeChild(document.getElementById("historyList").firstChild);
+      }
+   }
+}
+
+function closeBtn() {
+   document.getElementById('history').style.display = "none";
+}
+
+function clearStorage() {
+   localStorage.clear();
+   display_history();
+}
+
+function newSearch() {
+   window.location.reload()
 }

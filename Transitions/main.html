@@ -20,6 +20,11 @@
 
   </head>
   <body onload="onload()">
+     <!-- <script type="text/javascript">
+         window.onbeforeunload = function(){
+            window.localStorage.clear();
+         } -->
+    </script>
      <div id="title" class="title">
         <h1 class="fontStyle">Movie Deets</h1>
         <p class="scrolling"><span id="scrolling">"Gimmie Dem Deets!"</span></p>
@@ -29,8 +34,8 @@
      <div id="container">
         <input class="sBar" id="input" placeholder="Enter your movie here..."/>
         <br><br>
-        <button id="search" class="search" ontouch="submitBtn()" onclick="submitBtn()">Submit</button>
-        <button id="new" class="new" onClick="window.location.reload()">New Search</button>
+        <button id="search" class="search" ontouch="submitBtn('')" onclick="submitBtn('')">Submit</button>
+        <button id="new" class="new" onClick="newSearch()">New Search</button>
      </div>
      <br>
      <h1 id="movieTitle"></h1>
@@ -40,9 +45,16 @@
         <button class="btns2" onclick="display_overview()">Overview</button>
         <button class="btns3" onclick="display_cast()">Cast</button>
         <button class="btns4" id="videoBtn" onclick="video_check()">Video</button>
+        <button class="btns5" id="historyBtn" onclick="display_history()">History</button>
      </div>
-     <br><br><br>
+     <br><br><br><br><br>
      <div id="results">
+     </div>
+     <div class="history btn-group" id="history">
+        <button class="btns6" onclick="clearStorage()">Clear List</button>
+        <button class="btns7" onclick="newSearch()">New Search</button>
+        <a href="javascript:closeBtn()" class="closebtn">&times;</a>
+        <br><br><br>
      </div>
   </body>
 </html>
