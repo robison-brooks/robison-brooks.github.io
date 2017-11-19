@@ -12,6 +12,7 @@
       background-attachment: fixed;
       background-image: url("gradient-mask2.png");
       overflow-x: hidden;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
    }
 
    .title {
@@ -57,7 +58,7 @@
 
    @keyframes scrollText {
       0%   {
-         transform: translate(-40%, 0);
+         transform: translate(0%, 0) rotateX(0deg);
          color: white;
       }
       10% {
@@ -74,8 +75,9 @@
       }
       50% {
          color: #45CEE0;
+         transform: translate(27%, 0) rotateX(360deg);
       }
-      60% {
+      /*60% {
          color: white;
       }
       70% {
@@ -90,7 +92,7 @@
       100% {
          transform: translate(100%, 0);
          color: white;
-      }
+      }*/
    }
 
    #container {
@@ -173,14 +175,14 @@
       border: 2px solid black;
       color: white;
       text-align: center;
-      background-color: black;
+      background-color: rgba(0, 0, 0, 0.0);
       position: relative;
-      animation: scrollTD 5s ease;
+      animation: scrollTD 3s ease;
    }
 
    @keyframes scrollTD {
       0% {
-         transform: translate(-300%, 0);
+         transform: translate(-560%, 0) matrix(3, 0, 1, 1, 200, 0);
       }
       100% {
          transform: translate(0, 0);
@@ -223,6 +225,7 @@
       color: white;
       text-decoration: none;
    }
+
    .closebtn {
       position: absolute;
       top: 1px;
