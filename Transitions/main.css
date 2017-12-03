@@ -17,13 +17,15 @@
    }
 
    .spinLogo {
-      width: 100%;
+      width: 90%;
       text-align: center;
       font-size: 50%;
       animation: spinLogo 4s 9s forwards;
       opacity: 0;
       position: absolute;
       top: 60%;
+      overflow-x: hidden;
+      left: 6%;
    }
 
    @keyframes spinLogo {
@@ -34,7 +36,6 @@
       100% {
          opacity: 1;
          transform: rotate(2520deg) scale(5.5);
-
       }
    }
 
@@ -263,7 +264,8 @@
 
    .picContainer {
       position: relative;
-      background-color: #45CEE0;
+      background-color: transparent;
+      /*#45CEE0;*/
       width: 100%;
       height: 315px;
       z-index: 99;
