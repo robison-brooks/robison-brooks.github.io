@@ -60,6 +60,9 @@ function submitBtn(newText) {
    document.getElementById("search").disabled = true;
    document.getElementById("btn-group").style.display = "";
    document.getElementById("scrolling").innerHTML = "Check Out Deez Deets!"
+   document.getElementById("sloganContainer").style.display = "none";
+   document.getElementById("picContainer").style.display = "none";
+   document.getElementById("spinLogo").style.display = "none";
 
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
