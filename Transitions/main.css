@@ -284,7 +284,7 @@
    .pic1 {
       animation: pic1Fall 1s forwards;
       position: absolute;
-      padding-left: 32px;
+      padding-left: 29px;
       z-index: -10;
       top: -500px;
    }
@@ -295,7 +295,7 @@
       animation-delay: 1s;
       animation-fill-mode: forwards;
       position: absolute;
-      padding-left: 32px;
+      padding-left: 29px;
       padding-top: 32px;
       z-index: -9;
       top: -500px;
@@ -307,7 +307,7 @@
       animation-delay: 2s;
       animation-fill-mode: forwards;
       position: absolute;
-      padding-left: 32px;
+      padding-left: 29px;
       padding-top: 64px;
       z-index: -8;
       top: -500px;
@@ -319,7 +319,7 @@
       animation-delay: 3s;
       animation-fill-mode: forwards;
       position: absolute;
-      padding-left: 32px;
+      padding-left: 29px;
       padding-top: 96px;
       z-index: -7;
       top: -500px;
@@ -331,7 +331,7 @@
       animation-delay: 4s;
       animation-fill-mode: forwards;
       position: absolute;
-      padding-left: 32px;
+      padding-left: 29px;
       padding-top: 128px;
       z-index: -6;
       top: -500px;
